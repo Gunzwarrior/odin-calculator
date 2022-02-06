@@ -1,0 +1,48 @@
+.main-box {
+  background-color: gray;
+  height: 600px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.display {
+  background-color: white;
+  height: 50px;
+  width: 300px;
+  text-align: end;
+  font-size: 40px;
+  font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.keypad {
+  border: solid red 1px;
+  height: 500px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: stretch ;
+  justify-content: center;
+}
+
+button {
+  width: 80px;
+}
+
+.empty-space {
+  width: 80px;
+  border: solid blue 1px;
+}
+
+.zero {
+  width: 160px;
+}
+
+.red-button {
+  background-color: coral;
+}
+
+.operator-button {
+  background-color: royalblue;
+}
