@@ -25,3 +25,16 @@ const operate = function(operator, a, b) {
     return divide(a, b);
   };
 };
+
+const display = document.querySelector(".display");
+
+const testDisplay = function(word) {
+  display.textContent += word;
+};
+
+const buttonNumbers = document.querySelectorAll(".number");
+for (const buttonNumber of buttonNumbers) {
+  buttonNumber.addEventListener("click", () => {
+    display.textContent += buttonNumber.textContent;
+  })
+}
