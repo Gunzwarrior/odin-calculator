@@ -27,14 +27,28 @@ const operate = function(operator, a, b) {
 };
 
 const display = document.querySelector(".display");
-
-const testDisplay = function(word) {
-  display.textContent += word;
-};
+let firstNumber;
+let sign;
+let secondNumber;
+let startAgain = true;
 
 const buttonNumbers = document.querySelectorAll(".number");
 for (const buttonNumber of buttonNumbers) {
   buttonNumber.addEventListener("click", () => {
-    display.textContent += buttonNumber.textContent;
-  })
-}
+    if (!startAgain) {
+      display.textContent += buttonNumber.textContent;
+    } else {
+      display.textContent = buttonNumber.textContent;
+      startAgain = false;
+    };
+  });
+};
+
+const buttonOperators = document.querySelectorAll(".operator-button");
+for (const buttonOperator of buttonOperators) {
+  buttonOperator.addEventListener("click", () => {
+    firstNumber = display.textContent;
+    sign = buttonOperator.textContent;
+    startAgain = true;
+  });
+};
