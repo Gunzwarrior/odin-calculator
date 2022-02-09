@@ -34,6 +34,8 @@ const operate = function(operator, a, b) {
     console.log(a);
     console.log(b);
     console.log(divide(a, b));
+    if (b === 0) {
+      return "LOL"}; 
     return divide(a, b);
   };
 };
@@ -60,15 +62,23 @@ const buttonOperators = document.querySelectorAll(".operator-button");
 for (const buttonOperator of buttonOperators) {
   buttonOperator.addEventListener("click", () => {
     
-    if (!firstNumber) {
+    if (display.textContent === "LOL") {
+
+    } else if (!firstNumber && buttonOperator.textContent !== "=") {
     firstNumber = parseFloat(display.textContent);
     sign = buttonOperator.textContent;
     startAgain = true;
-    } else {
+    } else if (!firstNumber && buttonOperator.textContent === "=") {
+      // nothing happens
+    } else if (buttonOperator.textContent === "=") {
+      secondNumber = parseFloat(display.textContent);
+      display.textContent = operate(sign, firstNumber, secondNumber);
+      firstNumber = null;
+      startAgain = true;
+      } else {
       secondNumber = parseFloat(display.textContent);
       display.textContent = operate(sign, firstNumber, secondNumber);
       firstNumber = parseFloat(display.textContent);
-      secondNumber = null;
       sign = buttonOperator.textContent;
       startAgain = true;
     };
