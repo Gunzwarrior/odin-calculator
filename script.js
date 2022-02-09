@@ -84,3 +84,5 @@ for (const buttonOperator of buttonOperators) {
     };
   });
 };
+
+// next time work on 6.3 and containing characters inside the display
