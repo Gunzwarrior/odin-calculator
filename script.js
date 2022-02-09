@@ -16,12 +16,24 @@ const divide = function(a, b) {
 
 const operate = function(operator, a, b) {
   if (operator === "+") {
+    console.log(a);
+    console.log(b);
+    console.log(add(a, b));
     return add(a, b);
   } else if (operator === "-") {
+    console.log(a);
+    console.log(b);
+    console.log(subtract(a, b));
     return subtract(a, b);
-  } else if (operator === "*") {
+  } else if (operator === "x") {
+    console.log(a);
+    console.log(b);
+    console.log(multiply(a, b));
     return multiply(a, b);
-  } else if (operator === "/") {
+  } else if (operator === "\u00F7") {
+    console.log(a);
+    console.log(b);
+    console.log(divide(a, b));
     return divide(a, b);
   };
 };
@@ -47,8 +59,18 @@ for (const buttonNumber of buttonNumbers) {
 const buttonOperators = document.querySelectorAll(".operator-button");
 for (const buttonOperator of buttonOperators) {
   buttonOperator.addEventListener("click", () => {
-    firstNumber = display.textContent;
+    
+    if (!firstNumber) {
+    firstNumber = parseFloat(display.textContent);
     sign = buttonOperator.textContent;
     startAgain = true;
+    } else {
+      secondNumber = parseFloat(display.textContent);
+      display.textContent = operate(sign, firstNumber, secondNumber);
+      firstNumber = parseFloat(display.textContent);
+      secondNumber = null;
+      sign = buttonOperator.textContent;
+      startAgain = true;
+    };
   });
 };
