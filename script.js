@@ -45,6 +45,7 @@ let firstNumber;
 let sign;
 let secondNumber;
 let startAgain = true;
+let isPostive = true;
 
 const buttonNumbers = document.querySelectorAll(".number");
 for (const buttonNumber of buttonNumbers) {
@@ -85,4 +86,14 @@ for (const buttonOperator of buttonOperators) {
   });
 };
 
+const buttonSign = document.querySelector(".sign-button");
+buttonSign.addEventListener("click", () => {
+    if (display.textContent.charAt(0) !== "-" && display.textContent !== "0") {
+      display.textContent = "-" + display.textContent;
+    } else {
+      display.textContent = display.textContent.replace("-", "");
+    };
+  });
+
 // next time work on 6.3 and containing characters inside the display
+// add a way to enter negative numbers

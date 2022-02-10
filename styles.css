@@ -30,11 +30,6 @@ button {
   width: 80px;
 }
 
-.empty-space {
-  width: 80px;
-  border: solid blue 1px;
-}
-
 .zero {
   width: 160px;
 }
@@ -43,6 +38,6 @@ button {
   background-color: coral;
 }
 
-.operator-button {
+.operator-button, .sign-button {
   background-color: royalblue;
 }
