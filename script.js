@@ -40,6 +40,15 @@ const operate = function(operator, a, b) {
   };
 };
 
+const fitIn = function(number) {
+  number = Math.round((number + Number.EPSILON) * 1000) / 1000
+  if (number.toString().length <= 13) {
+    return number;
+  } else {
+    return number.toExponential(3);
+  };
+};
+
 const display = document.querySelector(".display");
 let firstNumber;
 let sign;
@@ -51,7 +60,11 @@ const buttonNumbers = document.querySelectorAll(".number");
 for (const buttonNumber of buttonNumbers) {
   buttonNumber.addEventListener("click", () => {
     if (!startAgain) {
-      display.textContent += buttonNumber.textContent;
+      if (display.textContent.length < 13) {
+        display.textContent += buttonNumber.textContent;
+      } else {
+        // nothing happens
+      }
     } else {
       display.textContent = buttonNumber.textContent;
       startAgain = false;
@@ -73,12 +86,12 @@ for (const buttonOperator of buttonOperators) {
       // nothing happens
     } else if (buttonOperator.textContent === "=") {
       secondNumber = parseFloat(display.textContent);
-      display.textContent = operate(sign, firstNumber, secondNumber);
+      display.textContent = fitIn(operate(sign, firstNumber, secondNumber));
       firstNumber = null;
       startAgain = true;
       } else {
       secondNumber = parseFloat(display.textContent);
-      display.textContent = operate(sign, firstNumber, secondNumber);
+      display.textContent = fitIn(operate(sign, firstNumber, secondNumber));
       firstNumber = parseFloat(display.textContent);
       sign = buttonOperator.textContent;
       startAgain = true;
@@ -89,11 +102,12 @@ for (const buttonOperator of buttonOperators) {
 const buttonSign = document.querySelector(".sign-button");
 buttonSign.addEventListener("click", () => {
     if (display.textContent.charAt(0) !== "-" && display.textContent !== "0") {
-      display.textContent = "-" + display.textContent;
+      if (display.textContent.length < 13) {
+        display.textContent = "-" + display.textContent;
+      } else {
+        // nothing happens
+      }
     } else {
       display.textContent = display.textContent.replace("-", "");
     };
   });
-
-// next time work on 6.3 and containing characters inside the display
-// add a way to enter negative numbers
