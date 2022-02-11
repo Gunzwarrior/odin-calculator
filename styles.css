@@ -7,7 +7,7 @@ body {
 }
 
 .main-box {
-  background-color: gray;
+  background-color: lightgray;
   height: 600px;
   width: 400px;
   display: flex;
@@ -17,7 +17,7 @@ body {
 }
 
 .display {
-  background-color: white;
+  background-color: rgb(161, 184, 161);
   height: 50px;
   width: 300px;
   text-align: end;
@@ -36,6 +36,8 @@ body {
 
 button {
   width: 80px;
+  color: white;
+  background-color: rgb(41, 40, 40);
 }
 
 .zero {
@@ -43,9 +45,9 @@ button {
 }
 
 .red-button {
-  background-color: coral;
+  background-color: chocolate;
 }
 
 .operator-button, .sign-button {
-  background-color: royalblue;
+  background-color: rgb(75, 74, 74);
 }
