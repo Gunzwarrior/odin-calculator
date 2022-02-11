@@ -47,6 +47,7 @@ button {
   font-weight: bolder;
   background-color: rgb(41, 40, 40);
   border-radius: 10%;
+  font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .zero {
@@ -59,4 +60,9 @@ button {
 
 .operator-button, .sign-button {
   background-color: rgb(75, 74, 74);
+}
+
+footer {
+  font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 20px;
 }

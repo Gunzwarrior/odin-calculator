@@ -134,5 +134,4 @@ buttonCorrect.addEventListener("click", () => {
   isPostive = true;
   display.textContent = "0";
 })
-  // make it look nice
-  // add keyboard support
+  // finish with the footer
