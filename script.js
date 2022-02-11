@@ -111,3 +111,19 @@ buttonSign.addEventListener("click", () => {
       display.textContent = display.textContent.replace("-", "");
     };
   });
+
+const buttonReset = document.querySelector(".reset-button");
+buttonReset.addEventListener("click", () => {
+  firstNumber = null;
+  sign = null;
+  secondNumber = null;
+  startAgain = true;
+  isPostive = true;
+  display.textContent = "0";
+})
+
+  // implement the clear data button
+  // implement the "." button
+  // implement the correction button
+  // make it look nice
+  // add keyboard support
