@@ -41,6 +41,10 @@ const operate = function(operator, a, b) {
 };
 
 const fitIn = function(number) {
+  
+  if (number === "LOL") {
+    return number;
+  }
   number = Math.round((number + Number.EPSILON) * 1000) / 1000
   if (number.toString().length <= 13) {
     return number;
@@ -135,7 +139,16 @@ buttonDot.addEventListener("click", () => {
     startAgain = false;
   };
 })
-  // implement the "." button
-  // implement the correction button
+
+const buttonCorrect = document.querySelector(".correct-button");
+buttonCorrect.addEventListener("click", () => {
+  // firstNumber = null;
+  // sign = null;
+  // secondNumber = null;
+  startAgain = true;
+  isPostive = true;
+  display.textContent = "0";
+})
+// implement the correction button
   // make it look nice
   // add keyboard support
