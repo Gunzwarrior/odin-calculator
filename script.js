@@ -34,7 +34,7 @@ const fitIn = function(number) {
     return number;
   }
   number = Math.round((number + Number.EPSILON) * 1000) / 1000
-  if (number.toString().length <= 13) {
+  if (number.toString().length <= 12) {
     return number;
   } else {
     return number.toExponential(3);
@@ -52,7 +52,7 @@ const buttonNumbers = document.querySelectorAll(".number");
 for (const buttonNumber of buttonNumbers) {
   buttonNumber.addEventListener("click", () => {
     if (!startAgain) {
-      if (display.textContent.length < 13) {
+      if (display.textContent.length < 12) {
         display.textContent += buttonNumber.textContent;
       } else {
         // nothing happens
@@ -94,7 +94,7 @@ for (const buttonOperator of buttonOperators) {
 const buttonSign = document.querySelector(".sign-button");
 buttonSign.addEventListener("click", () => {
     if (display.textContent.charAt(0) !== "-" && display.textContent !== "0") {
-      if (display.textContent.length < 13) {
+      if (display.textContent.length < 12) {
         display.textContent = "-" + display.textContent;
       } else {
         // nothing happens
@@ -117,7 +117,7 @@ buttonReset.addEventListener("click", () => {
 const buttonDot = document.querySelector(".dot-button");
 buttonDot.addEventListener("click", () => {
   if (!startAgain) {
-    if (display.textContent.length < 13 && !display.textContent.includes(".")) {
+    if (display.textContent.length < 12 && !display.textContent.includes(".")) {
       display.textContent += ".";
     } else {
       // nothing happens
