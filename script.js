@@ -122,7 +122,19 @@ buttonReset.addEventListener("click", () => {
   display.textContent = "0";
 })
 
-  // implement the clear data button
+const buttonDot = document.querySelector(".dot-button");
+buttonDot.addEventListener("click", () => {
+  if (!startAgain) {
+    if (display.textContent.length < 13 && !display.textContent.includes(".")) {
+      display.textContent += ".";
+    } else {
+      // nothing happens
+    }
+  } else {
+    display.textContent = "0.";
+    startAgain = false;
+  };
+})
   // implement the "." button
   // implement the correction button
   // make it look nice
