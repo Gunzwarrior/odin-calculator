@@ -16,24 +16,12 @@ const divide = function(a, b) {
 
 const operate = function(operator, a, b) {
   if (operator === "+") {
-    console.log(a);
-    console.log(b);
-    console.log(add(a, b));
     return add(a, b);
   } else if (operator === "-") {
-    console.log(a);
-    console.log(b);
-    console.log(subtract(a, b));
     return subtract(a, b);
   } else if (operator === "x") {
-    console.log(a);
-    console.log(b);
-    console.log(multiply(a, b));
     return multiply(a, b);
   } else if (operator === "\u00F7") {
-    console.log(a);
-    console.log(b);
-    console.log(divide(a, b));
     if (b === 0) {
       return "LOL"}; 
     return divide(a, b);
@@ -142,13 +130,9 @@ buttonDot.addEventListener("click", () => {
 
 const buttonCorrect = document.querySelector(".correct-button");
 buttonCorrect.addEventListener("click", () => {
-  // firstNumber = null;
-  // sign = null;
-  // secondNumber = null;
   startAgain = true;
   isPostive = true;
   display.textContent = "0";
 })
-// implement the correction button
   // make it look nice
   // add keyboard support
