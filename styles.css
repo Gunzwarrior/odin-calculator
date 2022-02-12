@@ -1,9 +1,15 @@
-body {
+.page {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: calc(100vh - 20px);
+  align-items: center;
+}
+
+.content {
+  display: flex;
   align-items: center;
   justify-content: center;
+  flex: 1 1 0;
 }
 
 .main-box {
@@ -65,4 +71,14 @@ button {
 footer {
   font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 20px;
+  flex: 0 0 auto;
+}
+
+.logo {
+  height: 18px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
 }
